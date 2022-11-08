@@ -1,0 +1,15 @@
+{
+    "name": "imersao_react_",
+    "version": "0.0.1",
+    "description": "Imersão Alura React",
+    "author": {
+        "Carlos Claro <carlosclaro79@gmail.com>"
+    },
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.16.1"
+    }
+}
