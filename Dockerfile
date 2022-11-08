@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:18
 
 WORKDIR /media/repositorio-ubun/www/alura/imersao/react_
 
@@ -10,5 +10,5 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+EXPOSE 3000
+CMD [ "npm", "run", "dev" ]
