@@ -8,9 +8,11 @@ $ npm run dev
 
 
 
-desafio, adicionar banner com unsplash.com
+desafio, adicionar banner com unsplash.com - ok
+- subi images minhas para incluir no projeto, inseri dinamicamente na lista, 3 images em uma array, com campos src e position, para posicionar melhor as images, inserindo o position através de constante
 
-criar favorites de github usando config favoritos
+
+criar favorites de github usando config favoritos 
 
 criar gitpros
 
