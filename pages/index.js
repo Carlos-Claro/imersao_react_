@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+import React from "react";
 
 
 function HomePage() {
@@ -10,13 +11,14 @@ function HomePage() {
   const estilosDaHomePage = {
     
   };
+  const [valorDoFiltro, setValorDoFiltro] = React.useState("");
   return (
     <>
     <CSSReset />
         <div style={estilosDaHomePage}>
-        <Menu />
+        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
         <Header />
-        <Timeline playlists={config.playlists} />
+        <Timeline playlists={config.playlists} searchValue={valorDoFiltro} />
         <Favorites />
         </div>
     </>
@@ -104,14 +106,14 @@ function Header() {
 
 function Favorites(){
   const favorites = config.favorites;
-  console.log(favorites);
+  
   return (
     <StyledFavorite>
       <section>
 
         <h2>Perfis Favoritos</h2>
         {favorites.map((data) => 
-        <div className="favorite-info">
+        <div className="favorite-info" key={data.github}>
             
               <img src={`https://github.com/${data.github}.png`} />
               <h2>{data.name}</h2>
@@ -129,16 +131,22 @@ function Timeline(props) {
       {playlistsNames.map(function (playlistName) {
         const videos = props.playlists[playlistName];
         return (
-          <section>
+          <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video) => {
-                return (
-                  <a href={video.url}>
-                    <img src={`${video.thumb}`} />
-                    <span>{video.title}</span>
-                  </a>
-                );
+              {videos
+                .filter((video) => {
+                  const titleNormalize = video.title.toLowerCase();
+                  const searchNormalize = props.searchValue.toLowerCase();
+                  return titleNormalize.includes(searchNormalize);
+              }) 
+                .map((video) => {
+                  return (
+                    <a href={video.url} key={video.url}>
+                      <img src={`${video.thumb}`} />
+                      <span>{video.title}</span>
+                    </a>
+                  );
               })}
             </div>
           </section>
