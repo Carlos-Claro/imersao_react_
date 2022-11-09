@@ -42,11 +42,22 @@ const StyledHeader = styled.div`
     gap: 16px;
     margin-top: 50px;
   }
+  .banner-topo{
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    border-radius: unset;
+  }
 `;
 function Header() {
+  const bannerNumber = Math.floor(Math.random() * (config.banners.length - 0));
+  const position = (valor) => {
+    return {objectPosition:valor};
+  }
   return (
     <StyledHeader>
-      {/* <img src="banner" /> */}
+      <img src={`${config.banners[bannerNumber].src}`} className="banner-topo" style={position(config.banners[bannerNumber].position)} />
       <section className="user-info">
         <img src={`https://github.com/${config.github}.png`} />
         <div>
@@ -59,7 +70,6 @@ function Header() {
 }
 
 function Timeline(props) {
-  console.log(props);
   const playlistsNames = Object.keys(props.playlists);
   return (
     <StyledTimeline>

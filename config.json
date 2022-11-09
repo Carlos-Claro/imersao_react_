@@ -2,6 +2,21 @@
     "name":"Carlos Claro (crclaro)",
     "job":"Developer",
     "github":"Carlos-Claro",
+    "banners":[
+      {
+        "src":"https://source.unsplash.com/wGIi7pbB_No",
+        "position": "0 20%"
+      },
+      {
+        "src":"https://source.unsplash.com/MJSuv3EAofk",
+        "position": "0 80%"
+      },
+      {
+        "src":"https://source.unsplash.com/728Luu582qU",
+        "position": "0 30%"
+      }
+      
+    ],
     "playlists": {
         "jogos": [
             {
