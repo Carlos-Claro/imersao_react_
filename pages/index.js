@@ -8,19 +8,16 @@ import React from "react";
 
 function HomePage() {
   const mensagem = "Bem vindo";
-  const estilosDaHomePage = {
-    
-  };
   const [valorDoFiltro, setValorDoFiltro] = React.useState("");
   return (
     <>
-    <CSSReset />
-        <div style={estilosDaHomePage}>
-        <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
-        <Header />
-        <Timeline playlists={config.playlists} searchValue={valorDoFiltro} />
-        <Favorites />
-        </div>
+    <div>
+
+      <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
+      <Header />
+      <Timeline playlists={config.playlists} searchValue={valorDoFiltro} />
+      <Favorites />
+    </div>
     </>
 
     
@@ -32,6 +29,7 @@ export default HomePage;
 
 
 const StyledHeader = styled.div`
+  background-color: ${({theme}) => theme.backgroundLevel1};
   img {
     width: 80px;
     height: 80px;
