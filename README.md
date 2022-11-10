@@ -7,10 +7,16 @@ utilizando npm para iniciar em modo dev
 $ npm run dev
 
 
-desafios 
+## desafios 
 
-criar pagina video.js com o video aberto
-conter titulo do video e o embeded do youtube
+- exercicio 1
+    - criar pagina video.js com o video aberto
+    - conter titulo do video e o embeded do youtube
+
+- exercicio 2
+    - no cadastro, criar thumb do video quando termina de digitar o  url
+    - validações de campo
+    - verificar e estudar formik 
 
 
 
