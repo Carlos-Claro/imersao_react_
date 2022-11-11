@@ -4,18 +4,34 @@ import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import React from "react";
+import { videoService } from "../src/services/videoService";
 
 
 function HomePage() {
   const mensagem = "Bem vindo";
   const [valorDoFiltro, setValorDoFiltro] = React.useState("");
+  const [playlists, setPlaylists] = React.useState({});
+  const service = videoService();
+  React.useEffect(() => {
+    service
+      .getAllVideos()
+      .then((dados) => {
+        const novasPlaylists = {...playlists};
+        dados.data.forEach((video) => {
+          if ( !novasPlaylists[video.playlist] ) novasPlaylists[video.playlist] = []
+        novasPlaylists[video.playlist].push(video)
+      })
+      setPlaylists(novasPlaylists);
+  });
+
+  }, []);
   return (
     <>
     <div>
 
       <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro} />
       <Header />
-      <Timeline playlists={config.playlists} searchValue={valorDoFiltro} />
+      <Timeline playlists={playlists} searchValue={valorDoFiltro} />
       <Favorites />
     </div>
     </>

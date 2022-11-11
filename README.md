@@ -1,4 +1,8 @@
-Projeto alura imersão React_
+###################################
+## Projeto alura imersão React_
+
+###################################
+
 
 utilizando docker para produção:
 $ sudo docker run -p 8080:3000 -d carlos/imersao-alura-react
@@ -18,6 +22,10 @@ $ npm run dev
     - validações de campo
     - verificar e estudar formik 
 
+- exercicio 3
+    - usar firebase
+    - 7daysofcode.io
+    - https://techguide.sh/
 
 
 
@@ -28,3 +36,9 @@ $ npm run dev
     - define temas 
     - usa contexto de color mode
     
+
+    ## anotações
+    - https://supabase.com/
+
+
+    --- Q!62wnQf66E!cdt
